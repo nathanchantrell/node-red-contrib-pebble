@@ -26,3 +26,4 @@ Optionally set **msg.notify** to true to get a notification when the pin is crea
 
 The Pebble User Token is stored in a separate credentials file.
 
+You can use the <a href="http://apps.getpebble.com/en_US/application/5648acf2b2013fe638000097">Timeline Token</a> app to get a token.
