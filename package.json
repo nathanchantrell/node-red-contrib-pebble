@@ -1,0 +1,24 @@
+{
+    "name"          : "node-red-contrib-pebble",
+    "version"       : "0.0.1",
+    "description"   : "A Node-RED node to send pins to the Pebble Timeline",
+    "dependencies"  : {
+        "pebble-api"   : "0.2.2"
+    },
+    "repository" : {
+        "type":"git",
+        "url":"https://github.com/nathanchantrell/node-red-contrib-pebble"
+    },
+    "license": "Apache-2.0",
+    "keywords": [ "node-red", "pebble", "pebble timeline" ],
+    "node-red"      : {
+        "nodes"     : {
+            "nma": "pebble.js"
+        }
+    },
+    "author": {
+        "name": "Nathan Chantrell",
+        "email": "nathan@chantrell.net",
+        "url": "http://nathan.chantrell.net"
+    }
+}

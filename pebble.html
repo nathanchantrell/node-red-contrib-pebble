@@ -1,0 +1,66 @@
+<!--
+  Copyright 2015 Nathan Chantrell @nathanchantrell
+  http://nathan.chantrell.net
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<script type="text/x-red" data-template-name="pebble">
+    <div class="form-row">
+        <label for="node-input-title"><i class="fa fa-flag"></i> Title</label>
+        <input type="text" id="node-input-title" placeholder="Node-RED">
+    </div>
+    <div class="form-row">
+        <label for="node-input-pebbletoken"><i class="fa fa-key"></i> Pebble User Token</label>
+        <input type="password" id="node-input-pebbletoken">
+    </div>
+    <br/>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="pebble">
+    <p>Sends a pin to the Timeline on a Pebble smartwatch with optional notification..</p>
+    <p>Uses <b>msg.time</b> to set the time for the pin (required).
+    <p>Optionally uses <b>msg.payload</b> to set the title, if not already set in the properties.</p>
+    <p>Optionally uses <b>msg.duration</b> to set the duration.</p>
+    <p>Optionally uses <b>msg.body</b> to set the body text of the pin</p>
+    <p>Optionally set <b>msg.notify</b> to true to get a notification when the pin is created</p>
+    <p>The Pebble User Token is stored in a separate credentials file.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('pebble',{
+        category: 'mobile-output',
+        defaults: {
+            title: {value:""},
+            name: {value:""}
+        },
+        credentials: {
+            pebbletoken: {type: "password"}
+        },
+        color:"#F3B567",
+        inputs:1,
+        outputs:0,
+        icon: "pebble.png",
+        align: "right",
+        label: function() {
+            return this.name||this.title||"pebble";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
