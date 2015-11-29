@@ -54,6 +54,7 @@ module.exports = function(RED) {
 	                });
 		} else {
 			var pin = new Timeline.Pin({
+			  id: Date.now().toString(),
 			  time: new Date(msg.time),
 			  duration: msg.duration,
 			  layout: new Timeline.Pin.Layout({
